@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reset Password</title>
+    <style>
+        /* @import url('https://fonts.googleapis.com/css2?family=Poppins:&display=swap'); */
+    </style>
+    <link rel="stylesheet" href="style.css">
+    <script src="validation.js"></script>
+</head>
+<body>
+    <section>
+        <!-- Login Box -->
+        <div class="login-box">
+            <form action="">
+                <h2>Reset Password</h2>
+                <!-- Add your login form fields here -->
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="person"></ion-icon></span>
+                    <input type="text" id="username" required>
+                    <label>Username</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name=""></ion-icon></span>
+                    <input type="text" id="zipcode"  maxlength="9" size="7"  required>
+                    <label>Zip Code</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                    <input type="password" id="newpw" required>
+                    <label>New Password</label>
+                </div>
+                <div class ="button-container">
+                    <button type="button" class="reset" style="margin-right: 10px" onclick="resetPw()">Reset Password</button>
+                    <button type="button" class="backToLogin" style="margin-left: 10px"> <a href="Login.html" style="text-decoration: none;color: #fff">Back to login</a></button>
+                </div>
+                <div class="register-link">
+                    <p>Don't have an account? <a href="Registration.html">Register</a></p>
+                    
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</html>

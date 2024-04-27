@@ -1,0 +1,230 @@
+.cormorant-bold {
+    font-family: "Cormorant", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Cormorant", serif;
+    line-height: 1.6;
+    color: #fff;
+}
+
+header {
+    background: #000000;
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header h1 {
+    font-size: 48px;
+}
+
+header a {
+    font-size: 24px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.navBarTop {
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navLine {
+    border-bottom: 1px solid purple;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.navBarBottom {
+    height: 5vh;
+    padding: 10px;
+    display: flex;
+}
+
+.navBarItem {
+    flex-grow: 1;
+    flex-shrink: 1;
+    width: 33.3vw;
+    text-align: center;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: calc(85vh - 1px);
+    background: url('assets/purple_swirl.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.login-box {
+    position: relative;
+    width: 500px;
+    height: 550px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .5);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(50px);
+}
+
+.register-box {
+    position: relative;
+    width: 500px;
+    height: 625px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .5);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(50px);
+}
+
+h2 {
+    font-size: 48px;
+    color: #ffffff;
+    text-align: center;
+}
+
+.input-box {
+    position: relative;
+    width: 360px;
+    margin: 30px 0;
+    border-bottom: 3px solid #ffffff;
+    outline: none;
+}
+
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 24px;
+    color: #ffffff;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label {
+    top: -5px;
+}
+
+.input-box input {
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 24px;
+    color: #ffffff;
+    font-weight: 600;
+    padding: 0 35px 0 5px;
+}
+
+.input-box .icon {
+    position: absolute;
+    right: 8px;
+    font-size: 1.2em;
+    line-height: 57px;
+}
+
+.remember-forgot {
+    margin: -15px 0 15px;
+    font-size: 18px;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+}
+
+.remember-forgot label input {
+    margin-right: 3px;
+}
+
+.remember-forgot a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.remember-forgot a:hover {
+    text-decoration: underline;
+}
+
+button {
+    width: 100%;
+    height: 40px;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 1em;
+    color: #fff;
+    background: #000000;
+    font-weight:500;
+}
+
+.button-container {
+    display: flex;
+    width: 100%; /* Adjust the width as needed */
+}
+
+.register-link {
+    font-size: 22px;
+    color: #ffffff;
+    text-align: center;
+    margin: 25px 0 10px;
+    font-weight: bold;
+}
+
+.register-link p a {
+    color: #ffffff;
+    font-weight: 600;
+    text-decoration: none;
+}
+.register-link p a:hover{
+    text-decoration: underline;
+}
+
+.register-link p a:hover{
+    text-decoration: underline;
+}
+
+
+.footer {
+    background: purple;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+}
+
+.contact {
+    margin: 100px;
+}
+
+.copyright {
+    background-color: purple;
+    text-align: center;
+    color: #ffffff;
+    font-size: 12px;
+}

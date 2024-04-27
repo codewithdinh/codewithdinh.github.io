@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fuel Quote History</title>
+    <link rel="stylesheet" href="patStyle.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&display=swap"
+        rel="stylesheet">
+    <script src="formHistoryPull.js"></script>
+</head>
+
+<html>
+    <header>
+        <div class="navBarTop">
+            <h1>Fuel Quote History</h1>
+        </div>
+        <div class="navLine"></div>
+        <div class="navBarBottom">
+            <!-- <div class="navBarItem">
+                <a href="Login.html">Log In/Register</a>
+            </div> -->
+			<div class="navBarItem">
+                <a href="profileUpdate.html">Profile</a>
+            </div>
+			<div class="navBarItem">
+                <a href="indexLoggedIn.html">Home</a>
+            </div>
+            <div class="navBarItem">
+                <a href="fuelForm.html">Fuel Form</a>
+            </div>
+        </div>
+    </header>
+
+	<script>
+		window.onclick = function(event) {
+			if (!event.target.matches('.dropbtn') && !event.target.matches('.filterdropbtn') && !event.target.matches("input")) {
+				closeDrop();
+			}
+			if(event.target.matches("button") && event.target.id != "submitFilters" && event.target.id != "clearFilters"){
+				switch(event.target.id){
+					case "galReqButton":
+						openDrop(galReqDropdown);
+						break;
+					case "addressButton":
+						openDrop(addressDropdown);
+						break;
+					case "dateButton":
+						openDrop(dateDropdown);
+						break;
+					case "suggestedPriceButton":
+						openDrop(suggestedPriceDropdown);
+						break;
+					case "amtDueButton":
+						openDrop(amtDueDropdown);
+						break;
+					case "dropmenubtn":
+						openDrop(dropdown);
+					break;
+				}
+			}
+		};
+	</script>
+	
+	<body onload="pullHistory()">
+		<div class = "container" style="margin: 2vh 3vw">
+		  <p class="alignleftText"><a href="fuelForm.html">&#8592; Return to Fuel Quote Form</a></p>
+		</div>
+		<div style="clear: both;"></div>
+
+		<!-- filter buttons section  -->
+		
+		<div style="margin: 2vh 3vw; width: 75vw; float: left"> 
+			<p style = "font-size: 20; line-height:52px;"><i class="fa fa-filter" style="padding: 15px"></i> Filter By: </p>
+			<div class="dropdown">
+				<button id="galReqButton" class="filterdropbtn">Gallons Requested</button>
+				<div id="galReqDropdown" class="filterdropdown-content">
+					<label>Min: </label>
+					<input type="number"  id="minGallons" placeholder="0" oninput="changeButtonClass2(minGallons, maxGallons, galReqButton, galReqDropdown)">
+					<label>Max: </label>
+					<input type="number"  id="maxGallons" placeholder="0" oninput="changeButtonClass2(minGallons, maxGallons, galReqButton, galReqDropdown)">
+				</div>
+			</div>
+			<div class="dropdown">
+				<button id="addressButton" class="filterdropbtn">Delivery Address</button>
+				<div id="addressDropdown" class="filterdropdown-content">
+					<label>Address: </label>
+					<input type="text"  style="width: 350px" placeholder = "567 Oak Street Houston, TX 77007" id="filteringAddress" oninput="changeButtonClass(filteringAddress, addressButton, addressDropdown)">
+				</div>
+			</div>		
+			<div class="dropdown">
+				<button id="dateButton" class="filterdropbtn">Delivery Date</button>
+				<div id="dateDropdown" class="filterdropdown-content">
+					<label>Between </label>
+					<input type="date"  id="startDate" oninput="changeButtonClass2(startDate, endDate, dateButton, dateDropdown)">
+					<label>  to</label>
+					<input type="date"  id="endDate" oninput="changeButtonClass2(startDate, endDate, dateButton, dateDropdown)">
+				</div>
+			</div>
+			<div class="dropdown">
+				<button id="suggestedPriceButton" class="filterdropbtn">Suggested Price</button>
+				<div id="suggestedPriceDropdown" class="filterdropdown-content">
+					<label>Between</label>
+					<input type="number"  placeholder="$0.00" id="minSuggestedPrice" oninput="changeButtonClass2(minSuggestedPrice, maxSuggestedPrice, suggestedPriceButton, suggestedPriceDropdown)">
+					<label>to</label>
+					<input type="number" placeholder="$0.00" id="maxSuggestedPrice" oninput="changeButtonClass2(minSuggestedPrice, maxSuggestedPrice, suggestedPriceButton, suggestedPriceDropdown)">
+				</div>
+			</div>
+			<div class="dropdown">
+				<button id="amtDueButton" class="filterdropbtn">Total Amount Due</button>
+				<div id="amtDueDropdown" class="filterdropdown-content">
+					<label>Between</label>
+					<input type="number" placeholder="$0.00" id="minDueAmt" oninput="changeButtonClass2(minDueAmt, maxDueAmt, amtDueButton, amtDueDropdown)">
+					<label>to</label>
+					<input type="number" placeholder="$0.00" id="maxDueAmt" oninput="changeButtonClass2(minDueAmt, maxDueAmt, amtDueButton, amtDueDropdown)">
+				</div>
+			</div>
+			<div class="dropdown">
+				<button onclick="createFilters()" id="submitFilters" class="dropbtn" style= "border-radius: 25px;">Search</button>
+				<button onclick="clearBoth()" id="clearFilters" class="filterdropbtn">Clear Filters</button>
+			</div>
+		</div>
+
+		<table id = "historyTable">
+			<thead>
+				<tr>
+					<th>Gallons Requested</th>
+					<th>Delivery Address</th>
+					<th>Delivery Date</th>
+					<th>Suggested Price</th>
+					<th>Total Amount Due</th>
+				</tr>
+			</thead>
+			<tbody>
+				<!-- table rows will be populated here by the JS -->
+			</tbody>
+		</table>
+
+
+
+		<div class="footer" id="Contact">
+			<div class="contact">
+				<h2>WellSpring Oil Ltd.</h2>
+				<p>Email: reach@wellspring.com</p>
+				<p>Phone: 713-598-7209</p>
+			</div>
+			<div class="brick-n-mortar">
+				<h2>Our Office</h2>
+				<p>567 Oak Street <br>  Houston, TX 77007</p>
+				<p>Open daily, 10 am-5:30 pm.</p>
+				<p>Closed Thanksgiving Day and Christmas Day.</p>
+			</div>
+		</div>
+		<div class="copyright">
+			<p>&copy; 2024 WellSpring Oil. All rights reserved.</p>
+		</div>
+		
+	</body>
+</html> 

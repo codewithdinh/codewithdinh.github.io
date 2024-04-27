@@ -1,0 +1,443 @@
+.cormorant-bold {
+    font-family: "Cormorant", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Cormorant", serif;
+    line-height: 1.6;
+}
+
+header {
+    background: #000000;
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header h1 {
+    font-size: 48px;
+}
+
+header a {
+    font-size: 24px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.navBarTop {
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navLine {
+    border-bottom: 1px solid purple;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.navBarBottom {
+    height: 5vh;
+    padding: 10px;
+    display: flex;
+}
+
+.navBarItem {
+    flex-grow: 1;
+    flex-shrink: 1;
+    width: 33.3vw;
+    text-align: center;
+}
+
+.parallax-refinery {
+    background-image: url('assets/violet_swirl.png');
+    min-height: 85vh;
+    width: calc(100vw-17px);
+    background-attachment: fixed;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+}
+
+.parallax-refinery::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -17;
+    width: calc(100vw - 17px);
+    height: 100vh;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, 0.5) 100%);
+    overflow: clip;
+}
+
+.overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    color: white;
+    font-size: 30px;
+}
+
+.hero {
+    position: absolute;
+    z-index: 10;
+    top: calc(50% + 100px);
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    color: #ffffff;
+}
+
+.hero h2 {
+    color: #ffffff;
+    font-size: 34px;
+}
+
+.hero h3 {
+    color: #ffffff;
+    font-size: 24px;
+}
+
+.column {
+    flex: 1;
+    text-align: center;
+}
+
+.divider {
+    width: 3px;
+    height: 100px;
+    background-color: #ffffff;
+}
+
+.text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    padding: 100px 100px 100px;
+}
+
+.text {
+    background: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+}
+
+.text h2 {
+    font-size: 30px;
+}
+
+.textP {
+    background: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+}
+
+.textP h3 {
+    font-size: 36px;
+    color: rgb(125, 125, 125);
+}
+
+.underline {
+    text-decoration: underline;
+    text-decoration-color: purple;
+    text-decoration-thickness: 4px;
+}
+
+.imgRow {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.imgRow img {
+    border-radius: 10px;
+    width: 25vw;
+    height: auto;
+    max-width: 500px;
+}
+
+.buffer {
+    height: 150px;
+    background-color: #ffffff;
+}
+
+.parallax-expressway {
+    background-image: url('assets/tokyoExpressway.jpg');
+    min-height: 50vh;
+    background-attachment: fixed;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.parallax-expressway::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -17;
+    width: calc(100vw - 17px);
+    height: 100vh;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%);
+    overflow: clip;
+}
+
+.companies {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.companies h2 {
+    font-size: 48px;
+    padding-top: 50px;
+    padding-bottom: 100px;
+}
+
+.companies img {
+    width: 50vw;
+    height: auto;
+    max-width: 1200px;
+}
+
+.testimonials {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 50px;
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.testim {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px;
+    max-width: 1000px;
+}
+
+.testim h3 {
+    display: flex;
+    align-items: center;
+    padding: 25px;
+    font-size: 24px;
+}
+
+.testim-content {
+    display: flex;
+    flex-direction: column;
+}
+
+#Maria {
+    min-width: 225px;
+    text-align: center;
+    order: 1;
+}
+
+#Maria img {
+    width: 150px;
+    height: 150px;
+}
+
+#Harry {
+    min-width: 225px;
+    text-align: center;
+}
+
+#Harry img {
+    width: 150px;
+    height: 150px;
+}
+
+#Belle {
+    min-width: 225px;
+    text-align: center;
+    order: 1;
+}
+
+#Belle img {
+    width: 150px;
+    height: 150px;
+}
+
+
+.purple-button {
+    background-color: purple;
+    color: white;
+    width: 125px;
+    height: 75px;
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.purple-button:hover {
+    background-color: darkpurple;
+}
+
+.container {
+    width: 50vw;
+    margin: 0 auto;
+    padding: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+#fuel-form {
+    background-image: url('assets/violet_swirl.png');
+    min-height: 85vh;
+    width: calc(100vw-17px);
+    background-attachment: fixed;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    color: #ffffff;
+    font-size: 20px;
+}
+#fuel-form::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -17;
+    width: calc(100vw - 17px);
+    height: 100vh;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, 0.5) 100%);
+    overflow: clip;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="number"],
+input[type="text"],
+input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #333333e4;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+input[readonly] {
+    background-color: #333333e4;
+    color: #fff;
+}
+
+.btn {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #555;
+}
+
+
+
+.footer {
+    background: purple;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+}
+
+.contact {
+    margin: 100px;
+}
+
+.copyright {
+    background-color: purple;
+    text-align: center;
+    color: #ffffff;
+    font-size: 12px;
+}
+
+
+
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #2196F3;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
